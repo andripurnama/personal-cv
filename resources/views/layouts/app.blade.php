@@ -20,6 +20,7 @@
         
     <link rel="stylesheet" href="{{ asset('assets/plugins/bootstrap/css/bootstrap.min.css') }}">
     <link id="theme-style" rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.4/css/dataTables.dataTables.min.css">
 </head>
 
 <body>
@@ -33,7 +34,7 @@
 
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="{{ url('assets/js/userprofile.js') }}"></script>
-
+<script src="https://cdn.datatables.net/2.1.4/js/dataTables.min.js"></script>
 @php
     
     /**
@@ -122,6 +123,11 @@
         }
 
     }
+
+    $('#user_table').DataTable({
+        responsive: true
+    });
+    
 </script>
 @yield('scripts')
 </body>
