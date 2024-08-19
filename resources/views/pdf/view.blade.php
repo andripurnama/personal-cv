@@ -1,32 +1,29 @@
-@extends('layouts.app')
-@section('content')
-<div class="content-wrapper mt-4">
-    <div class="content-header">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-8">
-                    <h1 class="m-0">User Profile</h1>
-                </div>
-                <div class="col-4 text-right">
-                    <a href="{{ route('index') }}" class="add-btn">
-                        <i class="fa fa-home"></i>
-                        <br> Home
-                    </a>
-                </div>
-            </div>
-            <div class="row mb-2">
-                <div class="col-sm-12">
-                    <ul class="page-breadcrumb breadcrumb">
-                        <li class="breadcrumb-item"><i class="fas fa-angle-right"></i></li>
-                        <li class="breadcrumb-item"><a href="{{ route('index') }}">Home</a></li>
-                        <li class="breadcrumb-item"><i class="fas fa-angle-right"></i></li>
-                        <li class="breadcrumb-item">User profiles</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <title>User Profile</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    {{-- <link rel="shortcut icon" href="{{ asset('favicon.ico') }}"> --}}
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic'
+        rel='stylesheet' type='text/css'>
+        
+    <link rel="stylesheet" href="{{ public_path() }}/assets/plugins/bootstrap/css/bootstrap.min.css') }}">
+    <link id="theme-style" rel="stylesheet" href="{{ public_path() }}/assets/css/style.css">
+</head>
+<body>
+<div class="content-wrapper mt-4">
+    
     <div class="container-fluid">
         <div class="row mt-3">
             <div class="col-12">
@@ -42,7 +39,7 @@
                             <div class="row">
                                 <div class="sidebar-wrapper col-4">
                                     <div class="profile-container">
-                                        <img class="profile box-image-preview img-fluid img-circle elevation-2" src="{{ isset($information['personal_info']['image_path']) && !empty($information['personal_info']['image_path']) ? asset('assets/images/'. $information['personal_info']['image_path'])  : asset('assets/images/user-thumb.jpg') }}"
+                                        <img class="profile box-image-preview img-fluid img-circle elevation-2" src="{{public_path()}}/assets/images/{{ $information['personal_info']['image_path'] }}"
                                             alt="" style="height:200px; width:200px;" />
                                         <h1 class="name">
                                             {{ isset($information['personal_info']['first_name']) ? $information['personal_info']['first_name'] : '' }}
@@ -279,4 +276,5 @@
         <!-- /.row -->
     </div>
 </div>
-@endsection
+</body>
+

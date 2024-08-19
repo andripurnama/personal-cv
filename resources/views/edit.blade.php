@@ -1,5 +1,5 @@
-{{ view('layouts.header') }}
-
+@extends('layouts.app')
+@section('content')
 <div class="content-wrapper mt-4">
     <div class="content-header">
         <div class="container-fluid">
@@ -1007,4 +1007,4 @@
         <!-- /.row -->
     </div>
 </div>
-{{ view('layouts.footer') }}
+@endsection

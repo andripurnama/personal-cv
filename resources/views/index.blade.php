@@ -25,7 +25,7 @@
                         <table id="user_table" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th>Sr</th>
+                                    <th>No</th>
                                     <th>Profile Photo</th>
                                     <th>Title</th>
                                     <th>First Name</th>
@@ -56,6 +56,11 @@
                                                     title="View Profile">
                                                     <i class="fas fa-eye"></i>
                                                 </a>
+                                                <a class="view_btn"
+                                                    href="{{ route('download.cv', $user['personal_info']['id']) }}"
+                                                    title="View Profile">
+                                                    <i class="fas fa-download"></i>
+                                                </a>
                                                 <a class="edit_btn"
                                                     href="{{ route('edit', $user['personal_info']['id']) }}"
                                                     title="Edit Profile">
@@ -77,15 +82,6 @@
                                     @endphp
                                 @endforeach
                             </tbody>
-                            <tfoot>
-                                <tr>
-                                    <th>Sr</th>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Email</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </tfoot>
                         </table>
                     </div>
                     <!-- /.card-body -->
